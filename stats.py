@@ -12,3 +12,13 @@ def character_count(book):
         elif word in character_dict:
             character_dict[word] += 1
     return character_dict
+
+def dict_sort(character_dict):
+    dict_list = []
+    for char, count in character_dict.items():
+        dict_list.append({"char":char,"num":count})
+    dict_list.sort(key=sort_on, reverse=True)
+    return dict_list
+
+def sort_on(item):
+    return item["num"]
